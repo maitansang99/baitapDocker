@@ -1,0 +1,17 @@
+version: "2.1"
+
+services:
+  webreactjs:
+    build:
+      context: ./
+      dockerfile: web.dockerfile
+    ports:
+      - 3000:3000
+    restart: always
+  servergo:
+    build:
+      context: ./
+      dockerfile: app.dockerfile
+    ports:
+      - 8080:8080
+    restart: always
