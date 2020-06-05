@@ -1,13 +1,14 @@
 version: "2.1"
-
 services:
   webreactjs:
     build:
       context: ./
       dockerfile: web.dockerfile
+    depends_on:
+      - servergo
     ports:
       - 3000:3000
-    restart: always
+    tty: true
   servergo:
     build:
       context: ./
